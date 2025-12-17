@@ -289,15 +289,9 @@ class _TerobosState extends State<Terobos> {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                        blurRadius: 15,
-                        offset: const Offset(-6, -6),
-                        spreadRadius: 1,
-                      ),
-                      BoxShadow(
                         color: const Color.fromARGB(255, 100, 100, 100),
-                        blurRadius: 15,
-                        offset: const Offset(6, 6),
+                        blurRadius: 5,
+                        offset: const Offset(3, 3),
                         spreadRadius: 1,
                       ),
                     ],
@@ -308,46 +302,45 @@ class _TerobosState extends State<Terobos> {
                     child: Column(
                       children: [
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/10.png',
                         'Asqi Syahrul A.', 
                         'K3523020'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/28.png',
                         'Ananda Olga K.', 
                         'K3523011'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/4.png',
                         'Ardika Muh I. R.', 
                         'K3523017'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/7.png',
                         'Yusup C D.', 
                         'K3523078'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/22.png',
                         'Reza Ahmad F.', 
                         'K3523063'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/3.png',
                         'Widhi Sri B.', 
                         'K3523075'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/26.png',
                         'Annisa Intan S.', 
                         'K3523014'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/15.png',
                         'Ratna Anata Sari', 
                         'K3523082'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/16.png',
                         'Nabila Kayla T. P.', 
                         'K3523054'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/20.png',
                         'Vanesha Betha L.', 
                         'K3523072'),
-
                   ],
                 )),
                 ),

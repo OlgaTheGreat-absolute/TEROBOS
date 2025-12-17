@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 import 'statistic.dart';
 import 'table.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class TerobosProfile extends StatelessWidget {
+class TerobosProfile extends StatefulWidget {
   const TerobosProfile({super.key});
 
+  @override
+  State<TerobosProfile> createState() => _TerobosProfileState();
+}
+
+bool isFirstImage = true;
+
+class _TerobosProfileState extends State<TerobosProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +45,9 @@ class TerobosProfile extends StatelessWidget {
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('images/bg.jpg'), // ganti dengan gambarmu
+                      image: AssetImage(
+                        'images/bg.jpg',
+                      ), // ganti dengan gambarmu
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -49,10 +57,21 @@ class TerobosProfile extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 55,
                     backgroundColor: Colors.white,
-                    child: const CircleAvatar(
-                      radius: 50,
-                      backgroundColor: Color(0xFF0D5EA6),
-                      backgroundImage: AssetImage('images/Terobos2.png'),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isFirstImage = !isFirstImage;
+                        });
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundColor: const Color(0xFF0D5EA6),
+                        backgroundImage: AssetImage(
+                          isFirstImage
+                              ? 'images/Terobos2.png'
+                              : 'images/Anomali.JPG', 
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -72,10 +91,7 @@ class TerobosProfile extends StatelessWidget {
             const SizedBox(height: 4),
             const Text(
               'Technopreneurship E-learning Robotik Skills',
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.grey,
-              ),
+              style: TextStyle(fontSize: 15, color: Colors.grey),
             ),
 
             const SizedBox(height: 20),
@@ -97,10 +113,7 @@ class TerobosProfile extends StatelessWidget {
                   Text(
                     textAlign: TextAlign.justify,
                     'TEROBOS (Technopreneurship E-learning Robotik Skills), sebuah website pembelajaran daring yang menyajikan materi robotika secara komprehensif, interaktif, dan mudah diakses kapan saja dan di mana saja. Platform ini dilengkapi dengan fitur seperti modul pembelajaran terstruktur, simulasi robot virtual, tutorial video, forum diskusi, dan proyek-proyek robotika berbasis project-based learning. Selain',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey
-                      ),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ],
               ),
@@ -140,67 +153,61 @@ class TerobosProfile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                        blurRadius: 15,
-                        offset: const Offset(-6, -6),
-                        spreadRadius: 1,
-                      ),
-                      BoxShadow(
                         color: const Color.fromARGB(255, 100, 100, 100),
-                        blurRadius: 15,
-                        offset: const Offset(6, 6),
+                        blurRadius: 5,
+                        offset: const Offset(3, 3),
                         spreadRadius: 1,
                       ),
                     ],
                   ),
-                  padding: EdgeInsets.all(20), 
+                  padding: EdgeInsets.all(20),
 
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/10.png',
                         'Asqi Syahrul A.', 
                         'K3523020'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/28.png',
                         'Ananda Olga K.', 
                         'K3523011'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/4.png',
                         'Ardika Muh I. R.', 
                         'K3523017'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/7.png',
                         'Yusup C D.', 
                         'K3523078'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/22.png',
                         'Reza Ahmad F.', 
                         'K3523063'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/3.png',
                         'Widhi Sri B.', 
                         'K3523075'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/26.png',
                         'Annisa Intan S.', 
                         'K3523014'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/15.png',
                         'Ratna Anata Sari', 
                         'K3523082'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/16.png',
                         'Nabila Kayla T. P.', 
                         'K3523054'),
                         _buildContainerCredit(
-                        'images/Terobos2.png',
+                        'images/20.png',
                         'Vanesha Betha L.', 
                         'K3523072'),
-
                   ],
-                )),
+                    ),
+                  ),
                 ),
               ),
               actions: [
@@ -249,7 +256,9 @@ class TerobosProfile extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                      MaterialPageRoute(builder: (context) => TerobosMonitorScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => TerobosMonitorScreen(),
+                    ),
                     (route) => false,
                   );
                 },
@@ -259,7 +268,7 @@ class TerobosProfile extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                      MaterialPageRoute(builder: (context) => TerobosStatistic()),
+                    MaterialPageRoute(builder: (context) => TerobosStatistic()),
                     (route) => false,
                   );
                 },
@@ -269,9 +278,9 @@ class TerobosProfile extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                      MaterialPageRoute(builder: (context) => const Terobos()),
+                    MaterialPageRoute(builder: (context) => const Terobos()),
                     (route) => false,
-                    );     
+                  );
                 },
               ),
               IconButton(
@@ -279,7 +288,7 @@ class TerobosProfile extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                      MaterialPageRoute(builder: (context) => TerobosProfile()),
+                    MaterialPageRoute(builder: (context) => TerobosProfile()),
                     (route) => false,
                   );
                 },
@@ -293,49 +302,53 @@ class TerobosProfile extends StatelessWidget {
 }
 
 Widget _buildContainerCredit(String imagePath, String text, String subtext) {
-    return Padding(
-      padding: EdgeInsetsGeometry.only(bottom: 10),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[200],  
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.grey[200],
-                      backgroundImage: AssetImage(imagePath),
-                    ),
+  return Padding(
+    padding: EdgeInsetsGeometry.only(bottom: 10),
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: SizedBox(
+                  width: 30,
+                  height: 30,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.grey[200],
+                    backgroundImage: AssetImage(imagePath),
                   ),
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text(text,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black
+                    color: Colors.black,
                   ),
-                ), Text(subtext,
+                ),
+                Text(
+                  subtext,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black
+                    color: Colors.black,
                   ),
-                )
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
