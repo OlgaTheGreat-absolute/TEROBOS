@@ -106,11 +106,6 @@ class _TerobosState extends State<Terobos> {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F6FA),
       appBar: AppBar(
-        leadingWidth: 50,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset('images/Terobos2.png'),
-        ),
         title: const Text(
           'TEROBOS MONITOR',
           style: TextStyle(
@@ -184,7 +179,7 @@ class _TerobosState extends State<Terobos> {
                         fontWeight: FontWeight.bold,
                         color: Colors.black87,
                       ),
-                      dataTextStyle: GoogleFonts.poppins(fontSize: 14),
+                      dataTextStyle: GoogleFonts.poppins(fontSize: 14,color: Colors.black87),
                       columns: const [
                         DataColumn(label: Text("Waktu")),
                         DataColumn(label: Text("Lokasi")),

@@ -62,7 +62,7 @@ class _TerobosProfileState extends State<TerobosProfile> {
                               backgroundImage: AssetImage(
                                 isFirstImage
                                     ? 'images/Terobos2.png'
-                                    : 'images/Anomali.JPG',
+                                    : 'images/grey.png',
                               ),
                             ),
                           ),

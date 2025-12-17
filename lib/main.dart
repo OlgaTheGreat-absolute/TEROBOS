@@ -46,11 +46,6 @@ class _TerobosMonitorScreenState extends State<TerobosMonitorScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 230, 230, 230),
       appBar: AppBar(
-        leadingWidth: 50,
-        leading: Container(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image(image: AssetImage('images/Terobos2.png')),
-        ),
         title: const Text(
           'TEROBOS MONITOR',
           style: TextStyle(
