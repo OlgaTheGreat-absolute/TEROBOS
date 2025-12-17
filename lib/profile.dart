@@ -17,23 +17,6 @@ class _TerobosProfileState extends State<TerobosProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        leadingWidth: 50,
-        leading: Container(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image(image: AssetImage('images/Terobos2.png')),
-        ),
-        title: const Text(
-          'TEROBOS MONITOR',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 255, 255, 255),
-          ),
-        ),
-        backgroundColor: const Color(0xFF0D5EA6), // Transparan agar menyatu
-        elevation: 0, // Hilangkan bayangan
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -41,40 +24,52 @@ class _TerobosProfileState extends State<TerobosProfile> {
               alignment: Alignment.center,
               children: [
                 Container(
-                  height: 180,
-                  width: double.infinity,
+                  height: 300,
+                  width: double.infinity, 
                   decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'images/bg.jpg',
-                      ), // ganti dengan gambarmu
-                      fit: BoxFit.cover,
+                    color: Color(0xFF0D5EA6), 
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(180),
+                      bottomRight: Radius.circular(180),
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: 40,
-                  child: CircleAvatar(
-                    radius: 55,
-                    backgroundColor: Colors.white,
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isFirstImage = !isFirstImage;
-                        });
-                      },
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundColor: const Color(0xFF0D5EA6),
-                        backgroundImage: AssetImage(
-                          isFirstImage
-                              ? 'images/Terobos2.png'
-                              : 'images/Anomali.JPG', 
+                  Positioned(
+                    top: 40,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 40),
+                          child: Text('PROFILE IOT',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              )),
                         ),
-                      ),
+                        CircleAvatar(
+                          radius: 55,
+                          backgroundColor: Colors.white,
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                isFirstImage = !isFirstImage;
+                              });
+                            },
+                            child: CircleAvatar(
+                              radius: 50,
+                              backgroundColor: const Color(0xFF0D5EA6),
+                              backgroundImage: AssetImage(
+                                isFirstImage
+                                    ? 'images/Terobos2.png'
+                                    : 'images/Anomali.JPG',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
               ],
             ),
 
@@ -112,7 +107,7 @@ class _TerobosProfileState extends State<TerobosProfile> {
                   SizedBox(height: 6),
                   Text(
                     textAlign: TextAlign.justify,
-                    'TEROBOS (Technopreneurship E-learning Robotik Skills), sebuah website pembelajaran daring yang menyajikan materi robotika secara komprehensif, interaktif, dan mudah diakses kapan saja dan di mana saja. Platform ini dilengkapi dengan fitur seperti modul pembelajaran terstruktur, simulasi robot virtual, tutorial video, forum diskusi, dan proyek-proyek robotika berbasis project-based learning. Selain',
+                    'TEROBOS merupakan sebuah perangkat Internet of Things (IoT) yang dirancang sebagai stasiun cuaca mini untuk melakukan pemantauan kondisi lingkungan secara real-time, terintegrasi, dan berbasis data. Sistem ini mengombinasikan beberapa sensor lingkungan utama, yaitu sensor cahaya, sensor hujan, sensor kelembapan, dan sensor jarak, yang bekerja secara simultan untuk menghasilkan informasi cuaca yang akurat dan relevan pada skala lokal.',
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ],
@@ -166,46 +161,56 @@ class _TerobosProfileState extends State<TerobosProfile> {
                     child: Column(
                       children: [
                         _buildContainerCredit(
-                        'images/10.png',
-                        'Asqi Syahrul A.', 
-                        'K3523020'),
+                          'images/10.png',
+                          'Asqi Syahrul A.',
+                          'K3523020',
+                        ),
                         _buildContainerCredit(
-                        'images/28.png',
-                        'Ananda Olga K.', 
-                        'K3523011'),
+                          'images/28.png',
+                          'Ananda Olga K.',
+                          'K3523011',
+                        ),
                         _buildContainerCredit(
-                        'images/4.png',
-                        'Ardika Muh I. R.', 
-                        'K3523017'),
+                          'images/4.png',
+                          'Ardika Muh I. R.',
+                          'K3523017',
+                        ),
                         _buildContainerCredit(
-                        'images/7.png',
-                        'Yusup C D.', 
-                        'K3523078'),
+                          'images/7.png',
+                          'Yusup C D.',
+                          'K3523078',
+                        ),
                         _buildContainerCredit(
-                        'images/22.png',
-                        'Reza Ahmad F.', 
-                        'K3523063'),
+                          'images/22.png',
+                          'Reza Ahmad F.',
+                          'K3523063',
+                        ),
                         _buildContainerCredit(
-                        'images/3.png',
-                        'Widhi Sri B.', 
-                        'K3523075'),
+                          'images/3.png',
+                          'Widhi Sri B.',
+                          'K3523075',
+                        ),
                         _buildContainerCredit(
-                        'images/26.png',
-                        'Annisa Intan S.', 
-                        'K3523014'),
+                          'images/26.png',
+                          'Annisa Intan S.',
+                          'K3523014',
+                        ),
                         _buildContainerCredit(
-                        'images/15.png',
-                        'Ratna Anata Sari', 
-                        'K3523082'),
+                          'images/15.png',
+                          'Ratna Anata Sari',
+                          'K3523082',
+                        ),
                         _buildContainerCredit(
-                        'images/16.png',
-                        'Nabila Kayla T. P.', 
-                        'K3523054'),
+                          'images/16.png',
+                          'Nabila Kayla T. P.',
+                          'K3523054',
+                        ),
                         _buildContainerCredit(
-                        'images/20.png',
-                        'Vanesha Betha L.', 
-                        'K3523072'),
-                  ],
+                          'images/20.png',
+                          'Vanesha Betha L.',
+                          'K3523072',
+                        ),
+                      ],
                     ),
                   ),
                 ),

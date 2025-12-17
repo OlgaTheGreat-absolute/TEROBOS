@@ -42,13 +42,13 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyCC7zG3VO2ccuBZCRyPN1U8iZlgNIiHnXI',
-    appId: '1:189883996833:web:cf00122b429ad9acc26ee0',
+    appId: '1:189883996833:web:17730f944293d92dc26ee0',
     messagingSenderId: '189883996833',
     projectId: 'stasiunmini',
     authDomain: 'stasiunmini.firebaseapp.com',
     databaseURL: 'https://stasiunmini-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'stasiunmini.firebasestorage.app',
-    measurementId: 'G-5B8EWYW3HX',
+    measurementId: 'G-6KP7Z7QEDY',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
